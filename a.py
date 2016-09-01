@@ -15,7 +15,10 @@ def modinv(f, m):
     if np.size(b) == 0:
         raise ValueError
     b = b[0].item(0)+1
-    return np.mod(b*p, m).astype(int)
+    g = (b*p).astype(int) % m
+    assert np.array_equal(f.dot(g) % m, np.identity(np.shape(f)[0], dtype=int))
+    assert isinstance(g, np.ndarray)
+    return g
 
 stov = lambda s, alphabet: [alphabet.index(c) for c in s]
 vtos = lambda x, alphabet: ''.join([alphabet[i] for i in x])
