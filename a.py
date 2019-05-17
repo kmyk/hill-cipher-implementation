@@ -7,9 +7,7 @@ def modinv(f, m):
     assert isinstance(f, np.ndarray)
     assert isinstance(m, int)
     det = int(np.round(np.linalg.det(f)))
-    if det % m == 0:
-        raise ValueError
-    det_inv = int(gmpy2.invert(det, m))
+    det_inv = int(gmpy2.invert(det, m))  # throws ZeroDivisionError if no inverse matrices exist
     g = det_inv * np.round(det * np.linalg.inv(f)).astype(int) % m
     assert np.array_equal(f.dot(g) % m, np.identity(len(f), dtype=int))
     assert isinstance(g, np.ndarray)
