@@ -8,4 +8,4 @@ install:
 script:
     - \[ $(python a.py -a ABCDEFGHIJKLMNOPQRSTUVWXYZ -k GYBNQKURP encrypt CAT) = FIN \]
     - \[ $(python a.py -a ABCDEFGHIJKLMNOPQRSTUVWXYZ -k GYBNQKURP decrypt FIN) = CAT \]
-    - \[ python3 a.py --alphabet 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789_{}' --key '32Cu3pmhGoyf}mY1}8Os4Hrd}Ife5k2qJRT2mQJLu8QkU5m_ANB8S3x5GF5VFcDP' decrypt '7Nv7}dI9hD9qGmP}CR_5wJDdkj4CKxd45rko1cj51DpHPnNDb__EXDotSRCP8ZCQ' \]
+    - \[ $(python3 a.py --alphabet 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789_{}' --key '32Cu3pmhGoyf}mY1}8Os4Hrd}Ife5k2qJRT2mQJLu8QkU5m_ANB8S3x5GF5VFcDP' decrypt '7Nv7}dI9hD9qGmP}CR_5wJDdkj4CKxd45rko1cj51DpHPnNDb__EXDotSRCP8ZCQ') = 'IceCTF{linear_algebra_plus_led_zeppelin_are_a_beautiful_m1xture}' \]
