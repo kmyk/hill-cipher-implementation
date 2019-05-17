@@ -6,7 +6,7 @@ import math
 def modinv(f, m):
     assert isinstance(f, np.ndarray)
     assert isinstance(m, int)
-    det = int(np.linalg.det(f))
+    det = int(np.round(np.linalg.det(f)))
     if det % m == 0:
         raise ValueError
     det_inv = int(gmpy2.invert(det, m))
